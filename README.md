@@ -4,7 +4,7 @@ A bash script that automatically finds and activates Python virtual environments
 
 ## Overview
 
-The `activate.txt` script is a smart Python environment loader that searches for and activates virtual environments in multiple ways, supporting various Python package managers and virtual environment setups.
+The `activate.sh` script is a smart Python environment loader that searches for and activates virtual environments in multiple ways, supporting various Python package managers and virtual environment setups.
 
 ## Features
 
@@ -24,7 +24,7 @@ The `activate.txt` script is a smart Python environment loader that searches for
 
 ```bash
 # Source the script to activate the nearest Python environment
-source activate.txt
+source activate.sh
 ```
 
 ### Requirements
@@ -33,10 +33,10 @@ The script must be sourced (not executed directly):
 
 ```bash
 # ✅ Correct
-source activate.txt
+source activate.sh
 
 # ❌ Incorrect
-./activate.txt
+./activate.sh
 ```
 
 ## How It Works
@@ -73,7 +73,7 @@ You can modify these variables at the top of the script:
 ### Standard Virtual Environment
 
 ```bash
-$ source activate.txt
+$ source activate.sh
 Activating: /home/user/project/.venv
 (.venv) $
 ```
@@ -81,7 +81,7 @@ Activating: /home/user/project/.venv
 ### Poetry Project
 
 ```bash
-$ source activate.txt
+$ source activate.sh
 Activating: /home/user/project/.cache/pypoetry/virtualenvs/project-abc123
 (project-abc123) $
 ```
@@ -89,7 +89,7 @@ Activating: /home/user/project/.cache/pypoetry/virtualenvs/project-abc123
 ### No Environment Found
 
 ```bash
-$ source activate.txt
+$ source activate.sh
 No Python environment found.
 ```
 
@@ -103,7 +103,7 @@ No Python environment found.
 
 ```
 project/
-├── activate.txt          # This script
+├── activate.sh          # This script
 ├── .venv/               # Standard virtual environment
 │   ├── bin/
 │   │   └── activate

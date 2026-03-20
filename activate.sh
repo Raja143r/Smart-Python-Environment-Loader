@@ -89,5 +89,12 @@ for (( i=0; i<=MAX_PARENT_DEPTH; i++ )); do
     search_dir="$parent"
 done
 
+read -p "No env found. Create one in $(pwd)? (y/n) " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    python3 -m venv .venv
+    source .venv/bin/activate
+    echo "Created and activated .venv"
+fi
 echo "No Python environment found."
 return 1 2>/dev/null || exit 1
